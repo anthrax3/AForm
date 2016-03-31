@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dcrf>
+	<blockWeb id="web">
+		<actions>
+			<setProperty connectorKey="formId" value="frmMain" />
+		</actions>
+		<blocks>
+			<block className="WinForm" id="frmMain">
+				<blockWeb>
+					<blocks>
+						<block className="TableLayout">
+							<actions>
+								<setProperty connectorKey="Rows" value="2" type="System.Int32" />
+								<setProperty connectorKey="Columns" value="2" type="System.Int32" />
+								<setProperty connectorKey="ColumnStyles" value="150,100%" type="System.String[]" separator="," />
+								<setProperty connectorKey="Dock" value="Fill" />
+							</actions>
+							<blockWeb>
+								<blocks>
+									<block className="Label" id="lblUserName">
+										<actions>
+											<setProperty connectorKey="Text" value="User Name:" />
+											<setProperty connectorKey="Row" value="0" type="System.Int32" />
+											<setProperty connectorKey="Row" value="0" type="System.Int32" />
+										</actions>
+									</block>
+									
+									<block className="TextBox" id="txtUserName">										
+									</block>
+
+									<block className="Label" id="lblUserScore">
+										<actions>
+											<setProperty connectorKey="Text" value="User Score:" />
+										</actions>
+									</block>
+									
+									<block className="TextBox" id="txtUserScore">
+									</block>
+									
+								</blocks>
+							</blockWeb>							
+						</block>
+					</blocks>
+				</blockWeb>
+			</block>
+		</blocks>
+	</blockWeb>
+</dcrf>

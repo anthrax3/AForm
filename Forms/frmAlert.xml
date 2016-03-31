@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dcrf>
+	<template id="tblRow">
+		<blocks>
+			<block className="Label">
+				<actions>
+					<setProperty connectorKey="Text" value="#TITLE" />
+					<setProperty connectorKey="Column" value="#COL1" type="System.Int32" />
+					<setProperty connectorKey ="Row" value="#ROW" type="System.Int32" />
+					<setProperty connectorKey="Anchor" value="Right" />
+				</actions>
+			</block>
+			<block className="TextBox">
+				<actions>
+					<setProperty connectorKey="Text" value="#TITLE" />
+					<setProperty connectorKey="Column" value="#COL2" type="System.Int32" />
+					<setProperty connectorKey ="Row" value="#ROW" type="System.Int32" />
+					<setProperty connectorKey="Anchor" value="Left" />
+				</actions>
+			</block>
+		</blocks>
+	</template>
+	<blockWeb id="frmAlertBlockWeb">
+		<actions>
+			<setProperty connectorKey="FormId" value="frmAlert" />
+		</actions>
+		<blocks>
+			<block id="frmAlert" className="WinForm">
+				<blockWeb>
+					<blocks>
+						<block className="TableLayout">
+							<actions>
+								<setProperty connectorKey="Rows" value="5" type="System.Int32" />
+								<setProperty connectorKey="Columns" value="2" type="System.Int32" />
+								<setProperty connectorKey="ColumnStyles" value="150,100%" type="System.String[]" separator="," />
+								<setProperty connectorKey="Dock" value="Fill" />
+							</actions>
+							<blockWeb>
+								<blocks>
+									<include template="tblRow">
+										<templateArgs>
+											<valueArg argKey="TITLE" value="#GLOTITLE" />
+											<valueArg argKey="COL1" value="0" />
+											<valueArg argKey="COL2" value="1" />
+											<valueArg argKey="ROW" value="0" />											
+										</templateArgs>
+									</include>
+
+									<include template="tblRow">
+										<templateArgs>
+											<valueArg argKey="TITLE" value="Alert Date:" />
+											<valueArg argKey="COL1" value="0" />
+											<valueArg argKey="COL2" value="1" />
+											<valueArg argKey="ROW" value="1" />
+										</templateArgs>
+									</include>
+
+									<include template="tblRow">
+										<templateArgs>
+											<valueArg argKey="TITLE" value="Alert Time:" />
+											<valueArg argKey="COL1" value="0" />
+											<valueArg argKey="COL2" value="1" />
+											<valueArg argKey="ROW" value="2" />
+										</templateArgs>
+									</include>
+
+									<include template="tblRow">
+										<templateArgs>
+											<valueArg argKey="TITLE" value="Alert Status:" />
+											<valueArg argKey="COL1" value="0" />
+											<valueArg argKey="COL2" value="1" />
+											<valueArg argKey="ROW" value="3" />
+										</templateArgs>
+									</include>
+									
+									<block className="Button" id="cmdOK">
+										<actions>
+											<setProperty connectorKey="Text" value="OK" />
+											<setProperty connectorKey="Column" value="0" type="System.Int32" />
+											<setProperty connectorKey ="Row" value="4" type="System.Int32" />
+											<setProperty connectorKey="Anchor" value="None" />
+										</actions>
+									</block>
+									
+									<block className="Button" id="cmdCancel">
+										<actions>
+											<setProperty connectorKey="Text" value="Cancel" />
+											<setProperty connectorKey="Column" value="0" type="System.Int32" />
+											<setProperty connectorKey ="Row" value="4" type="System.Int32" />
+											<setProperty connectorKey="Anchor" value="None" />
+										</actions>
+									</block>
+									
+								</blocks>
+							</blockWeb>
+						</block>
+					</blocks>
+				</blockWeb>
+			</block>
+		</blocks>
+	</blockWeb>
+</dcrf>

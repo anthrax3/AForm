@@ -1,0 +1,14 @@
+﻿phase1: separete aform from dcrf and complete its controls
+phase2: move almaas to AForm (in this migration controls will be modified and enhanced)
+phase3: provide form generation platform
+
+
+phase1: add comments
+		enhance controls: anchor, dock, width, height, font
+		provide localization functionality
+		read xml from embedded resource
+		add and enhance other basic non-ui controls: rowfeeder, datasaver, ...
+
+phase2: form by form move to DCRF (write one form for each CRUD operation)
+		provide other features like context menu in AForm
+

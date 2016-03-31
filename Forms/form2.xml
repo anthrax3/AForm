@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dcrf>
+	<blockWeb id="a">
+		<reference key="icon1" file="box-3.ico" type="icon"/>
+
+		<blocks>
+			<block id="frmMain" className="WinForm">
+				<actions>
+					<setProperty connectorKey="icon" value="@icon1" />
+				</actions>
+				<blockWeb>
+					<blocks>
+						<block id="lbl" className="Label">
+							<actions>
+								<setProperty connectorKey="Text" value="This is a test" />
+							</actions>
+						</block>
+					</blocks>
+				</blockWeb>
+			</block>
+
+		</blocks>
+		<actions>
+			<setProperty connectorKey="FormId" value="frmMain" />
+		</actions>
+	</blockWeb>
+</dcrf>

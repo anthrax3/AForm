@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dcrf>
+	<blockWeb id="a">
+		<reference file="test1.xml" key="test1" />
+		<include template="test1\inc">
+			<templateArgs>
+				<valueArg argKey="key1" value="hello">
+					
+				</valueArg>
+			</templateArgs>
+		</include>
+		<actions>
+			<setProperty connectorKey="prop1" value="#a" />
+		</actions>
+	</blockWeb>
+
+	<template id="inc">
+		<actions>
+			<setVariable name="a" value="#key1">
+			</setVariable>
+		</actions>	
+	</template>
+
+</dcrf>

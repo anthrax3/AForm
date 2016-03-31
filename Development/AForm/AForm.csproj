@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E3F89013-D5D3-4F97-9164-3B15F875D307}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AForm</RootNamespace>
+    <AssemblyName>AForm</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Blocks\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DBML, Version=1.8.11.35988, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DBML\bin\Debug\DBML.dll</HintPath>
+    </Reference>
+    <Reference Include="DBML.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DBML\bin\Debug\DBML.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\RowCreator.cs" />
+    <Compile Include="Data\RowFeeder.cs" />
+    <Compile Include="Data\DataSaver.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validator\RequiredFieldValidator.cs" />
+    <Compile Include="Web\Controls\Button.cs" />
+    <Compile Include="Web\Base\WebControlBase.cs" />
+    <Compile Include="Web\Forms\WebForm.cs" />
+    <Compile Include="Web\Base\WebFormBase.cs" />
+    <Compile Include="Web\WebGen.cs" />
+    <Compile Include="Web\Controls\Label.cs" />
+    <Compile Include="Web\Controls\TextBox.cs" />
+    <Compile Include="Win\Controls\Button.cs" />
+    <Compile Include="Win\Controls\CheckBox.cs" />
+    <Compile Include="Win\Controls\DataGrid.cs" />
+    <Compile Include="Win\Controls\DropDown.cs" />
+    <Compile Include="Win\Controls\GridFilterButton.cs" />
+    <Compile Include="Win\Controls\Label.cs" />
+    <Compile Include="Win\Controls\LookupLabel.cs" />
+    <Compile Include="Win\Controls\TableLayout.cs" />
+    <Compile Include="Win\Controls\TextBox.cs" />
+    <Compile Include="Win\Base\WinControlBase.cs" />
+    <Compile Include="Win\Forms\WinForm.cs" />
+    <Compile Include="Win\Base\WinFormBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\DCRF\Development.Core\DCRF.Common\DCRF.Common.csproj">
+      <Project>{6A64B722-8F06-40B6-AAD3-3321BAF69DC1}</Project>
+      <Name>DCRF.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ToDo.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

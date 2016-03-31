@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dcrf>
+<template>
+	<blocks>
+	<block id="t1">
+		<actions>
+			<setProperty connectorKey="Text" value="open new form" />
+			<attachServiceEndPoint connectorKey="Click">
+				<serviceEndPoint service="OpenForm">
+					<fixedArgs>
+						<valueEndPoint value="form2.xml" />
+					</fixedArgs>
+				</serviceEndPoint>
+			</attachServiceEndPoint>
+		</actions>
+	</block>
+
+	<block id="SimpleLabel">
+		<actions>
+			<setProperty connectorKey="Text" value="default" />
+			<setProperty connectorKey="Column" value="#R" type="System.Int32" />
+			<setProperty connectorKey ="Row" value="#C" type="System.Int32" />
+			<setProperty connectorKey="Bold" value="true" type="System.Boolean" />
+		</actions>
+	</block>
+	</blocks>
+
+	<template id="mahdi">
+		<blocks>
+		<block id="Feeder1" className="RowFeeder">
+			<actions>
+				<setProperty connectorKey="Form" value="frmMain" type="System.String" />
+			</actions>
+		</block>
+
+		<block id="saver1" className="DataSaver" />
+
+		<block id="grid1" className="DataGrid">
+			<actions>
+				<setProperty connectorKey="TableName" value="TABLE1" type="System.String" />
+				<setProperty connectorKey="Columns" type="System.String[]" value="PK_ID,USER_NAME,USER_SCORE" separator="," />
+				<setProperty connectorKey="ColumnHeaders" type="System.String[]">
+					<item value="Id" />
+					<item value="user name" />
+					<item value="user score" />
+				</setProperty>
+			</actions>
+		</block>
+
+
+		<block id="gridf1" className="GridFilterButton">
+			<actions>
+				<setProperty connectorKey="Text" value="apply" type="System.String" />
+				<setProperty connectorKey="GridName" value="grid1" type="System.String" />
+				<setProperty connectorKey="TableName" value="TABLE1" type="System.String" />
+				<setProperty connectorKey="FilterValueControls" value="username" type="System.String[]" separator="," />
+				<setProperty connectorKey="FilterFields" value="USER_NAME" type="System.String[]" separator="," />
+			</actions>
+		</block>
+
+		<block id="ddl1" className="DropDown">
+			<actions>
+				<setProperty connectorKey="Table" value="TABLE2" />
+				<setProperty connectorKey="DisplayField" value="TITLE" />
+				<setProperty connectorKey="ValueField" value="PK_ID" />
+				<processRequest service="initDDL" />
+			</actions>
+		</block>
+
+		<block id="del1" className="Button">
+			<actions>
+				<setProperty connectorKey="Text" value="Delete" i18nKey="DELETE" />
+				<attachServiceEndPoint connectorKey="Click">
+					<serviceEndPoint service="DeleteData" blockId="saver1">
+						<fixedArgs>
+							<valueEndPoint value="TABLE1" />
+							<serviceEndPoint blockId="pkid" service="GetValue" targetType="System.Int32" />
+						</fixedArgs>
+					</serviceEndPoint>
+				</attachServiceEndPoint>
+			</actions>
+		</block>
+		</blocks>
+	</template>
+	
+</template>
+</dcrf>
